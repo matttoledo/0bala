@@ -1,5 +1,4 @@
 function submitForm(event) {
-  const form = event.currentTarget; // Get the current form
   event.preventDefault(); // Prevent the default form submission
 
   // Get the form data
@@ -11,8 +10,7 @@ function submitForm(event) {
   // console.log("name>>>" + document.querySelector("#name"))
 
   const headers = new Headers({
-  'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': 'https://itchy-pears-wonder-189-83-161-24.loca.lt',
+  'Content-Type': 'application/json'
 });
   // Set the object with the data to send
   const postData = {
@@ -24,12 +22,14 @@ function submitForm(event) {
     };
 
   // Send the POST request with the message body using fetch()
-  fetch('https://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/save', {
+  fetch('http://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/save', {
     method: 'POST',
     headers: headers,
     body: JSON.stringify(postData)
   })
+  console.log("body " + Json.stringify(postData) +" "+ "header"+ Json.stringify(headers))
   .then(response => {
+    console.log("response: " + JSON.stringify(response))
     // Handle the server response
     console.log('Post created successfully!');
   })
