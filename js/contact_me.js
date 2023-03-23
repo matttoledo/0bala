@@ -16,14 +16,12 @@ function submitForm(event) {
 });
   // Set the object with the data to send
   const postData = {
-    elementIds: {
       name: name,
       phone: phone,
       email: email,
       // neighborhood: neighborhood,
       // city: city
-    }
-  };
+    };
 
   // Send the POST request with the message body using fetch()
   fetch('https://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/save', {
