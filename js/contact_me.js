@@ -12,7 +12,6 @@ function submitForm(event) {
 
   const headers = new Headers({
   'Content-Type': 'application/json',
-  'Origin': 'https://verlyvidros.com',
 });
   // Set the object with the data to send
   const postData = {
