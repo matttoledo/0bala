@@ -12,7 +12,7 @@ function submitForm(event) {
 
   const headers = new Headers({
   'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': 'https://public-ends-hunt-189-83-161-24.loca.lt',
+  'Access-Control-Allow-Origin': 'https://verlyvidros.com',
 });
   // Set the object with the data to send
   const postData = {
