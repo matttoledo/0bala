@@ -28,6 +28,7 @@ function submitForm(event) {
   })
   .then(response => {
     // Handle the server response
+    document.getElementById("contact-form").reset()
     console.log('Post created successfully!');
   })
   .catch(error => {
