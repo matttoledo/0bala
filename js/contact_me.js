@@ -1,34 +1,42 @@
-function submitForm() {
+function submitForm(event) {
+  const form = event.currentTarget; // Get the current form
+  event.preventDefault(); // Prevent the default form submission
+
   // Get the form data
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const email = document.getElementById('email').value;
-  const neighborhood = document.getElementById('neighborhood').value;
-  const city = document.getElementById('city').value;
-  
-  // Create the post data object
+  const name = document.querySelector("#name").value;
+  const phone = document.querySelector("#phone").value;
+  const email = document.querySelector("#email").value;
+  // const neighborhood = document.querySelector("#neighborhood").value;
+  // const city = document.querySelector("#city").value;
+  // console.log("name>>>" + document.querySelector("#name"))
+
+  const headers = new Headers({
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': 'https://public-ends-hunt-189-83-161-24.loca.lt',
+});
+  // Set the object with the data to send
   const postData = {
-    name,
-    phone,
-    email,
-    neighborhood,
-    city
+    elementIds: {
+      name: name,
+      phone: phone,
+      email: email,
+      // neighborhood: neighborhood,
+      // city: city
+    }
   };
-  console.log('postData> ' + postData)
-  // Send the post data to the server-side script
+
+  // Send the POST request with the message body using fetch()
   fetch('https://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/send', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: headers,
     body: JSON.stringify(postData)
   })
   .then(response => {
-    // Handle the response from the server
+    // Handle the server response
     console.log('Post created successfully!');
   })
   .catch(error => {
-    // Handle any errors that occurred during the request
+    // Handle the errors that occurred during the request
     console.error('Error creating post:', error);
   });
 }
