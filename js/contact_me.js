@@ -12,6 +12,7 @@ function submitForm(event) {
 
   const headers = new Headers({
   'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': 'https://itchy-pears-wonder-189-83-161-24.loca.lt',
 });
   // Set the object with the data to send
   const postData = {
@@ -21,8 +22,9 @@ function submitForm(event) {
       // neighborhood: neighborhood,
       // city: city
     };
+
   // Send the POST request with the message body using fetch()
-  fetch('https://itchy-pears-wonder-189-83-161-24.loca.lt/verly-leads-api/save', {
+  fetch('https://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/save', {
     method: 'POST',
     headers: headers,
     body: JSON.stringify(postData)
