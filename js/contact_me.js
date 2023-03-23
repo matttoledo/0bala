@@ -27,7 +27,7 @@ function submitForm(event) {
     headers: headers,
     body: JSON.stringify(postData)
   })
-  console.log("body " + Json.stringify(postData) +" "+ "header"+ Json.stringify(headers))
+  console.log("body " + JSON.stringify(postData) +" "+ "header"+ JSON.stringify(headers))
   .then(response => {
     console.log("response: " + JSON.stringify(response))
     // Handle the server response
