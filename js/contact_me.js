@@ -5,9 +5,8 @@ function submitForm(event) {
   const name = document.querySelector("#name").value;
   const phone = document.querySelector("#phone").value;
   const email = document.querySelector("#email").value;
-  // const neighborhood = document.querySelector("#neighborhood").value;
-  // const city = document.querySelector("#city").value;
-  // console.log("name>>>" + document.querySelector("#name"))
+  const neighborhood = document.querySelector("#neighborhood").value;
+  const city = document.querySelector("#city").value;
 
   const headers = {
   'Content-Type': 'application/json'
@@ -17,8 +16,8 @@ function submitForm(event) {
       name: name,
       phone: phone,
       email: email,
-      // neighborhood: neighborhood,
-      // city: city
+      neighborhood: neighborhood,
+      city: city
     };
 
   // Send the POST request with the message body using fetch()
