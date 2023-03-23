@@ -22,6 +22,7 @@ function submitForm(event) {
       // neighborhood: neighborhood,
       // city: city
     };
+  console.log("headers>>" + headers);
 
   // Send the POST request with the message body using fetch()
   fetch('https://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/save', {
