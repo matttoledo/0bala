@@ -9,9 +9,9 @@ function submitForm(event) {
   // const city = document.querySelector("#city").value;
   // console.log("name>>>" + document.querySelector("#name"))
 
-  const headers = new Headers({
+  const headers = {
   'Content-Type': 'application/json'
-});
+  };
   // Set the object with the data to send
   const postData = {
       name: name,
