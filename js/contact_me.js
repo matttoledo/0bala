@@ -22,7 +22,7 @@ function submitForm(event) {
     };
 
   // Send the POST request with the message body using fetch()
-  fetch('http://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/save', {
+  fetch('https://public-ends-hunt-189-83-161-24.loca.lt/verly-leads-api/save', {
     method: 'POST',
     headers: headers,
     body: JSON.stringify(postData)
