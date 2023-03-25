@@ -21,7 +21,7 @@ function submitForm(event) {
     };
 
   // Send the POST request with the message body using fetch()
-  fetch('https://itchy-pears-wonder-189-83-161-24.loca.lt/verly-leads-api/send', {
+  fetch('https://verly-leads-api.loca.lt/verly-leads-api/send', {
     method: 'POST',
     headers: headers,
     body: JSON.stringify(postData)
