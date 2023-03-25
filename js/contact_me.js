@@ -14,7 +14,7 @@ function submitForm(event) {
   // Set the object with the data to send
   const postData = {
       name: name,
-      phone: phone,
+      phone: phone.replace('(','').replace(')',''),
       email: email,
       neighborhood: neighborhood,
       city: city
