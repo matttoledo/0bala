@@ -252,9 +252,6 @@
           <div class="alert alert-secondary" role="alert" style="display:none;" id="alertSuccessMsg">
             Ótimo! O seu orçamento foi enviado com sucesso. Em breve entraremos em contato. Obrigado!
           </div>
-        
-          <!-- Add a button to trigger the alert -->
-          <button type="button" class="btn btn-primary" onclick="showAlert()">Show Alert</button>
        </div>
       <form id="contact-form">
         <fieldset>
@@ -674,21 +671,6 @@
     $('#phone').inputmask("(99)99999-9999");
   });
   </script>
-
-<script>
-  function showAlert() {
-     // Get the alert element
-     var alertMsg = document.getElementById("alertMsg");
-
-     // Show the alert element
-     alertMsg.style.display = "block";
-
-     // Set a timeout to hide the alert after 3 seconds
-     setTimeout(function(){
-        alertMsg.style.display = "none";
-     }, 3000);
-  }
-</script>
 
 </body>
 
