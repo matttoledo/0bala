@@ -32,18 +32,18 @@ function submitForm(event) {
     alertSuccessMsg.style.display = "block";
     setTimeout(function(){
       alertSuccessMsg.style.display = "none";
-   }, 3000);
+   }, 5000);
     // Handle the server response
     document.getElementById("contact-form").reset()
-    alertMsg.focus()
+    document.querySelector("#name").focus()
     console.log('Post created successfully!');
   })
   .catch(error => {
     alertErrorMsg.style.display = "block";
-    alertMsg.focus()
+    document.querySelector("#name").focus()
     setTimeout(function(){
       alertErrorMsg.style.display = "none";
-   }, 3000);
+   }, 5000);
     // Handle the errors that occurred during the request
     console.error('Error creating post:', error);
   });
