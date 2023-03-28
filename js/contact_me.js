@@ -23,7 +23,7 @@ function submitForm(event) {
 
     
   // Send the POST request with the message body using fetch()
-  fetch('https://verly-leads-api.loca.lt/verly-leads-api/send', {
+  fetch('https://verly-leads-api.loca.lt-v2/verly-leads-api/send', {
     method: 'POST',
     headers: headers,
     body: JSON.stringify(postData)
