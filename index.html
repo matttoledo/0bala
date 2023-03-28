@@ -19,10 +19,21 @@
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
 
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-THLB7VR');</script>
+  <!-- End Google Tag Manager -->
+
 </head>
-
-<body id="page-top">
-
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THLB7VR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
@@ -233,6 +244,18 @@
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">PEÇA SEU ORÇAMENTO</h2>
 
       <div align = "center">
+        <div class="container mt-3">
+          <!-- Add the alert component -->
+          <div class="alert alert-danger" role="alert" style="display:none;" id="alertErrorMsg">
+            Desculpe, não foi possível enviar o orçamento agora. Verifique sua conexão e tente novamente mais tarde ou entre em contato para obter ajuda.
+          </div>
+          <div class="alert alert-secondary" role="alert" style="display:none;" id="alertSuccessMsg">
+            Ótimo! O seu orçamento foi enviado com sucesso. Em breve entraremos em contato. Obrigado!
+          </div>
+        
+          <!-- Add a button to trigger the alert -->
+          <button type="button" class="btn btn-primary" onclick="showAlert()">Show Alert</button>
+       </div>
       <form id="contact-form">
         <fieldset>
         <!-- Text input-->
@@ -318,6 +341,7 @@
             <button onclick=submitForm(event) id="sendButton" name="sendButton" class="btn btn-primary">Enviar</button>
           </div>
         </div>
+        
         
         </fieldset>
         </form>
@@ -644,11 +668,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 
+
 <script>
   $(document).ready(function(){
     $('#phone').inputmask("(99)99999-9999");
   });
   </script>
+
+<script>
+  function showAlert() {
+     // Get the alert element
+     var alertMsg = document.getElementById("alertMsg");
+
+     // Show the alert element
+     alertMsg.style.display = "block";
+
+     // Set a timeout to hide the alert after 3 seconds
+     setTimeout(function(){
+        alertMsg.style.display = "none";
+     }, 3000);
+  }
+</script>
 
 </body>
 

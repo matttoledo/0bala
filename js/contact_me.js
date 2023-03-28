@@ -2,11 +2,12 @@ function submitForm(event) {
   event.preventDefault(); // Prevent the default form submission
 
   // Get the form data
-  const name = document.querySelector("#name").value;
-  const phone = document.querySelector("#phone").value;
-  const email = document.querySelector("#email").value;
-  const neighborhood = document.querySelector("#neighborhood").value;
-  const city = document.querySelector("#city").value;
+  const name = document.querySelector("#name").value
+  const phone = document.querySelector("#phone").value
+  const email = document.querySelector("#email").value
+  const neighborhood = document.querySelector("#neighborhood").value
+  const city = document.querySelector("#city").value
+  var alertMsg = document.getElementById("alertMsg")
 
   const headers = {
   'Content-Type': 'application/json'
@@ -20,6 +21,7 @@ function submitForm(event) {
       city: city
     };
 
+    
   // Send the POST request with the message body using fetch()
   fetch('https://verly-leads-api.loca.lt/verly-leads-api/send', {
     method: 'POST',
@@ -27,11 +29,19 @@ function submitForm(event) {
     body: JSON.stringify(postData)
   })
   .then(response => {
+    alertSuccessMsg.style.display = "block";
+    setTimeout(function(){
+      alertSuccessMsg.style.display = "none";
+   }, 3000);
     // Handle the server response
     document.getElementById("contact-form").reset()
     console.log('Post created successfully!');
   })
   .catch(error => {
+    alertErrorMsg.style.display = "block";
+    setTimeout(function(){
+      alertErrorMsg.style.display = "none";
+   }, 3000);
     // Handle the errors that occurred during the request
     console.error('Error creating post:', error);
   });
