@@ -15,7 +15,7 @@ function submitForm(event) {
   // Set the object with the data to send
   const postData = {
       name: name,
-      phone: phone.replace('(','').replace(')',''),
+      phone: phone.replace('(','').replace(')','').replace('-',''),
       email: email,
       neighborhood: neighborhood,
       city: city
@@ -35,10 +35,12 @@ function submitForm(event) {
    }, 3000);
     // Handle the server response
     document.getElementById("contact-form").reset()
+    alertMsg.focus()
     console.log('Post created successfully!');
   })
   .catch(error => {
     alertErrorMsg.style.display = "block";
+    alertMsg.focus()
     setTimeout(function(){
       alertErrorMsg.style.display = "none";
    }, 3000);
