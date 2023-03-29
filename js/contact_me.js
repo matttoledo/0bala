@@ -31,7 +31,6 @@ function submitForm(event) {
   })
   .then(response => {
     alertSuccessMsg.style.display = "block";
-    alarmsDiv.focus()
     setTimeout(function(){
       alertSuccessMsg.style.display = "none";
    }, 5000);
@@ -42,7 +41,7 @@ function submitForm(event) {
   })
   .catch(error => {
     alertErrorMsg.style.display = "block";
-    document.querySelector("#name").focus()
+    alarmsDiv.focus()
     setTimeout(function(){
       alertErrorMsg.style.display = "none";
    }, 5000);
