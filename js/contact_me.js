@@ -7,7 +7,8 @@ function submitForm(event) {
   const email = document.querySelector("#email").value
   const neighborhood = document.querySelector("#neighborhood").value
   const city = document.querySelector("#city").value
-  var alertMsg = document.getElementById("alertMsg")
+  const alarmsDiv = document.querySelector('#alarms');
+
 
   const headers = {
   'Content-Type': 'application/json'
@@ -30,12 +31,13 @@ function submitForm(event) {
   })
   .then(response => {
     alertSuccessMsg.style.display = "block";
+    alarmsDiv.focus()
     setTimeout(function(){
       alertSuccessMsg.style.display = "none";
    }, 5000);
     // Handle the server response
     document.getElementById("contact-form").reset()
-    document.querySelector("#name").focus()
+    alarmsDiv.focus()
     console.log('Post created successfully!');
   })
   .catch(error => {
