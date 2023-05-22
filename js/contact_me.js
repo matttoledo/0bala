@@ -24,7 +24,7 @@ function submitForm(event) {
 
     
   // Send the POST request with the message body using fetch()
-  fetch('https://verly-leads-api.loca.lt/verly-leads-api/send', {
+  fetch('http://ec2-44-201-85-225.compute-1.amazonaws.com:8080/verly-leads-api/send', {
     method: 'POST',
     headers: headers,
     body: JSON.stringify(postData)
