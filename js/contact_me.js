@@ -39,13 +39,13 @@ function submitForm(event) {
     alarmsDiv.focus()
     console.log('Post created successfully!');
   })
-  .catch(error => {
-    alertErrorMsg.style.display = "block";
-    alarmsDiv.focus()
-    setTimeout(function(){
-      alertErrorMsg.style.display = "none";
-   }, 5000);
-    // Handle the errors that occurred during the request
-    console.error('Error creating post:', error);
-  });
+  // .catch(error => {
+  //   alertErrorMsg.style.display = "block";
+  //   alarmsDiv.focus()
+  //   setTimeout(function(){
+  //     alertErrorMsg.style.display = "none";
+  //  }, 5000);
+  //   // Handle the errors that occurred during the request
+  //   console.error('Error creating post:', error);
+  // });
 }
