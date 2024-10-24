@@ -7,6 +7,9 @@ function submitForm(event) {
   const email = document.querySelector("#email").value
   const neighborhood = document.querySelector("#neighborhood").value
   const city = document.querySelector("#city").value
+  const userAgent = navigator.userAgent;
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height; 
   const alarmsDiv = document.querySelector('#alarms');
 
 
